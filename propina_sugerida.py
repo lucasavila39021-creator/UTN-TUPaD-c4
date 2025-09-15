@@ -1,8 +1,0 @@
-monto_cuenta=input("Ingrese el monto a abonar: ")
-monto_cuenta=int(monto_cuenta)
-propina_sugerida10=(monto_cuenta*10/100)
-propina_sugerida15=(monto_cuenta*15/100)
-Cuenta_total_al10=(monto_cuenta+propina_sugerida10)
-Cuenta_total_al15=(monto_cuenta+propina_sugerida15)
-print("El importe a abonar cuenta y 10% de propina es: ",Cuenta_total_al10)
-print("El Importe a abonar cuenta y 15% de propina es:",Cuenta_total_al15)
