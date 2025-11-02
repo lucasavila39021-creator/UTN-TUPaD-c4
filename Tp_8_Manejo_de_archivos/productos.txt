@@ -1,0 +1,6 @@
+nombre,precio,cantidad
+mesa,$150.000,7
+silla,$35.000,15
+mesa de luz,$65.000,8
+cama,$1.750.000,5
+biblioteca,$75.000,4
