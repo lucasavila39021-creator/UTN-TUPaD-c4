@@ -1,0 +1,9 @@
+nombre,precio,cantidad
+placard,$750.000,2
+placard,$750.000,2
+placard,$750.000,2
+placard,$750.000,2
+placard,$750.000,2
+placard,$750.000,2
+placard,$750.000,2
+placard,$750.000,2

@@ -51,9 +51,9 @@ productos=[]
 try:
     with open ("productos.txt","r") as archivo:
         encabezado= archivo.readline()
-        for linea in archivo
+        for linea in archivo:
             linea=linea.strip()
-                if linea:
+            if linea:
                     partes=linea.split(",")
                     producto_dic= {
                         "nombre": nombre,
@@ -65,8 +65,51 @@ try:
     print("Contenido de la lista (para verificar) ")
     print(productos)
     print("----------------------------------------------")
-    except FileNotFoundError:
+except FileNotFoundError:
         print("Error: El archivo productos.txt no se encontro.")
-    except Exception as e:
+except Exception as e:
         print(f"Ocurrio el error: {e}")
-            
+
+print("--------------------------------------------------")
+# 5. Buscar producto por nombre: Pedir al usuario que ingrese el nombre de un 
+# producto. Recorrer la lista de productos y, si lo encuentra, mostrar todos sus datos. Si 
+# no existe, mostrar un mensaje de error.
+nombre_buscar=input("Ingrese el nombre del producto a buscar: ")
+encontrado=False
+for producto in productos:
+    if producto["nombre"].lower() == nombre_buscar.lower():
+        print("Producto encontrado:")
+        print(f"Nombre: {producto['nombre']}")
+        print(f"Precio: {producto['precio']}")
+        print(f"Cantidad: {producto['cantidad']}")
+        encontrado=True
+        break
+if not encontrado:
+    print(f"Error: El producto '{nombre_buscar}' no existe en la lista.")
+    
+    
+print("--------------------------------------------------")
+
+# 6. Guardar los productos actualizados: Después de haber leído, buscado o agregado 
+# productos, sobrescribir el archivo productos.txt escribiendo nuevamente todos los 
+# productos actualizados desde la lista. 
+# Consejo final: 
+# Antes de empezar, analizá cada problema y pensá cómo dividirlo en partes: 
+# ● Leer archivo 
+# ● Procesar datos 
+# ● Mostrar o actualizar información 
+# ● Guardar los cambios 
+# Al terminar, probá tu programa varias veces: 
+# ● ¿Se puede agregar más de un producto? 
+# ● ¿Se guarda todo correctamente? 
+# ● ¿Se muestra bien el resultado?
+
+with open ("productos.txt","w") as archivo:
+    archivo.write("nombre,precio,cantidad\n")
+    for producto in productos:
+        linea=f"{producto['nombre']},{producto['precio']},{producto['cantidad']}\n"
+        archivo.write(linea)
+print("Archivo 'productos.txt' actualizado exitosamente con los productos en memoria.")
+
+
+print("--------------------------------------------------")
